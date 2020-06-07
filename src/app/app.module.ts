@@ -16,7 +16,7 @@ import {MatTableModule} from '@angular/material/table'
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatFileUploadModule } from 'angular-material-fileupload';
-
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -39,6 +39,7 @@ import { MatFileUploadModule } from 'angular-material-fileupload';
     MatPaginatorModule,
     MatSortModule,
     MatFileUploadModule,
+    MatButtonModule,
     
     
 

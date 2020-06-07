@@ -8,12 +8,24 @@
 </form> -->
 
 
- <input matInput type="file" name="File upload" id="csvFile" (change)="csvImporter($event)" accept=".csv" /> 
+<div [fileUploadInputFor]="fileUploadQueue" class="upload-drop-zone">
+  Just drag and drop files here
+</div>
 
 
+<div style="width: 500px">
+  <mat-file-upload-queue #fileUploadQueue
+      [fileAlias]="'file'"
+      [httpUrl]="'https://localhost:44323/api/parameter/'" multiple>
+
+      <mat-file-upload [file]="file" [id]="i" *ngFor="let file of fileUploadQueue.files; let i = index"></mat-file-upload>
+  </mat-file-upload-queue>
+</div>
 
 
-<button mat-button color="primary" (click)="sendDataList()">Send Loaded Data</button>
+ <!-- <input type="file" name="File upload" id="csvFile" (change)="csvImporter($event)" accept=".csv" />  -->
+
+<button mat-raised-button color="primary" (click)="sendDataList()">Send Loaded Data</button>
 
 <br>
 
