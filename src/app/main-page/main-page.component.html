@@ -1,0 +1,53 @@
+
+<!-- <form class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Insert time series data here:</mat-label>
+    <input matInput [value]=dataa >
+  </mat-form-field>
+<button (click)="sendData(dataa)"> Send Data </button>
+</form> -->
+
+
+ <input matInput type="file" name="File upload" id="csvFile" (change)="csvImporter($event)" accept=".csv" /> 
+
+
+
+
+<button mat-button color="primary" (click)="sendDataList()">Send Loaded Data</button>
+
+<br>
+
+
+<mat-form-field>
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event)">
+</mat-form-field>
+
+<div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" matSort>
+
+    <!-- ID Column -->
+    <!-- <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+      <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+    </ng-container> -->
+
+    <!-- Progress Column -->
+    <ng-container matColumnDef="timestamp">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Timestamp </th>
+      <td mat-cell *matCellDef="let row"> {{row.timestamp}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="value">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Value </th>
+      <td mat-cell *matCellDef="let row"> {{row.value}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+    </tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>
