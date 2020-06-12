@@ -7,7 +7,7 @@ import {MatTableDataSource} from '@angular/material/table';
 
 export class CSVRecord {  
   public timestamp: any;  
-  public value: any;  
+  public value: number;  
      
 } 
 
@@ -32,6 +32,22 @@ export class MainPageComponent implements OnInit {
   ngOnInit() {
 
 
+  }
+
+  unloadData(){
+
+    if (this.records){
+
+     this.records = [];
+     this.registers =[];
+     this.dataSource.data.splice(0);
+     this.dataSource._updateChangeSubscription();
+     this.dataSource = new MatTableDataSource(this.registers);
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+
+
+  }
   }
 
 
@@ -88,7 +104,7 @@ export class MainPageComponent implements OnInit {
       if (curruntRecord.length == headerLength) {  
         let csvRecord: CSVRecord = new CSVRecord();  
         csvRecord.timestamp = curruntRecord[0].trim();  
-        csvRecord.value = curruntRecord[1].trim();    
+        csvRecord.value = Number(curruntRecord[1].trim());    
         csvArr.push(csvRecord);  
       }  
     }  

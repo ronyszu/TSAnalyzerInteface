@@ -1,15 +1,6 @@
-
-<!-- <form class="example-form">
-  <mat-form-field class="example-full-width">
-    <mat-label>Insert time series data here:</mat-label>
-    <input matInput [value]=dataa >
-  </mat-form-field>
-<button (click)="sendData(dataa)"> Send Data </button>
-</form> -->
-
-
-<div [fileUploadInputFor]="fileUploadQueue" class="upload-drop-zone">
-  Just drag and drop files here
+<app-buttons></app-buttons>
+<!-- <div [fileUploadInputFor]="fileUploadQueue" class="upload-drop-zone">
+  Drag and drop files here
 </div>
 
 
@@ -20,22 +11,22 @@
 
       <mat-file-upload [file]="file" [id]="i" *ngFor="let file of fileUploadQueue.files; let i = index"></mat-file-upload>
   </mat-file-upload-queue>
-</div>
+</div> -->
+
+<button class="button" type="button" mat-raised-button color="warn" (click)="fileInput.click()">Choose File</button>
+<input hidden (change)="csvImporter($event)" #fileInput type="file" id="file" accept=".csv">
 
 
- <!-- <input type="file" name="File upload" id="csvFile" (change)="csvImporter($event)" accept=".csv" />  -->
-
-<button mat-raised-button color="primary" (click)="sendDataList()">Send Loaded Data</button>
 
 <br>
 
 
-<mat-form-field>
-  <mat-label>Filter</mat-label> 
+<mat-form-field class="filter">
+  <mat-label >Filter</mat-label> 
   <input matInput (keyup)="applyFilter($event)">
 </mat-form-field>
 
-<div class="mat-elevation-z8">
+<div class="mat-elevation-z8 tables">
   <table mat-table [dataSource]="dataSource" matSort>
 
     <!-- ID Column -->
@@ -63,3 +54,6 @@
 
   <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
 </div>
+
+<button style="float: right;" class="button" mat-raised-button color="primary" (click)="sendDataList()">Send Loaded Data</button>
+<button style="float: right;" class="button" mat-raised-button color="warn" (click)="unloadData()">Unload Data</button>

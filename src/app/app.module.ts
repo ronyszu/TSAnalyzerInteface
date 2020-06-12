@@ -17,14 +17,17 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatFileUploadModule } from 'angular-material-fileupload';
 import { MatButtonModule } from '@angular/material/button';
-
+import { ButtonsComponent } from './buttons/buttons.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     MainPageComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    ButtonsComponent
   ],
   imports: [
     BrowserModule,
@@ -40,6 +43,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatSortModule,
     MatFileUploadModule,
     MatButtonModule,
+    MatIconModule,
+    MatGridListModule,
     
     
 

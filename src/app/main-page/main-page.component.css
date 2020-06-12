@@ -10,3 +10,21 @@ table {
   td, th {
     width: 25%;
   }
+
+  .tables{
+
+    width: 75%;
+    margin:auto;
+  }
+
+  .filter{
+
+    width: 15%;
+    margin:2rem;
+  }
+
+  .button{
+
+    width: 15%;
+    margin:2rem;
+  }
