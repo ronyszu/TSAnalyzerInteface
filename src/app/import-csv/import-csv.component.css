@@ -1,0 +1,30 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 25%;
+  }
+
+  .tables{
+
+    width: 75%;
+    margin:auto;
+  }
+
+  .filter{
+
+    width: 15%;
+    margin:2rem;
+  }
+
+  .button{
+
+    width: 15%;
+    margin:2rem;
+  }

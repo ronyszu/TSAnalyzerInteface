@@ -20,6 +20,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { ReportComponent } from './report/report.component';
+import { ImportCsvComponent } from './import-csv/import-csv.component';
+import { IndicatorComponent } from './indicator/indicator.component';
+import { MatExpansionModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,10 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MainComponent,
     MainPageComponent,
     ToolbarComponent,
-    ButtonsComponent
+    ButtonsComponent,
+    ReportComponent,
+    ImportCsvComponent,
+    IndicatorComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +52,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatButtonModule,
     MatIconModule,
     MatGridListModule,
+    MatExpansionModule
+    
     
     
 
