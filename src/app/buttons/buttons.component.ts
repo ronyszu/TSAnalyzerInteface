@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { read } from 'fs';
 import { CSVRecord, ImportCsvComponent } from '../import-csv/import-csv.component';
 import { IndicatorComponent } from '../indicator/indicator.component';
 import { ReportComponent } from '../report/report.component';
@@ -11,9 +10,9 @@ import { ReportComponent } from '../report/report.component';
 })
 export class ButtonsComponent implements OnInit {
 
-  @ViewChild(ImportCsvComponent) importCSV: ImportCsvComponent;
-  @ViewChild(ReportComponent) report: ReportComponent;
-  @ViewChild(IndicatorComponent) indicator: IndicatorComponent;
+  // @ViewChild(ImportCsvComponent) importCSV: ImportCsvComponent;
+  // @ViewChild(ReportComponent) report: ReportComponent;
+  // @ViewChild(IndicatorComponent) indicator: IndicatorComponent;
 
   constructor() { }
 
@@ -21,27 +20,27 @@ export class ButtonsComponent implements OnInit {
   }
 
 
-  toggleCSV(){
+  // toggleCSV(){
 
-    this.importCSV.expansionPanel.toggle();
+  //   this.importCSV.expansionPanel.toggle();
 
-    //close other windows, if they are open
-    this.report.expansionPanel.close()
-    this.indicator.expansionPanel.close()
+  //   //close other windows, if they are open
+  //   this.report.expansionPanel.close()
+  //   this.indicator.expansionPanel.close()
 
-  }
-
-
-  toggleConfig(){
-
-  }
+  // }
 
 
-  toggleReports(){
+  // toggleConfig(){
+
+  // }
+
+
+  // toggleReports(){
 
 
 
-  }
+  // }
 
 
 

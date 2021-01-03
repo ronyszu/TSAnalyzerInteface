@@ -8,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 
 export class MainPageComponent implements OnInit {
 
+
+results: { [key: string]: number };
+
   ngOnInit() {
   }
 
-  
+  updateResults(result: { [key: string]: number }){
+
+    this.results = result;
+
+  }
 
 }

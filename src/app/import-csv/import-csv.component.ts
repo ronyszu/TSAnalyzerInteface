@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 import { HttpService } from '../services/http.service';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
@@ -34,6 +34,8 @@ export class ImportCsvComponent implements OnInit {
   @ViewChild(MatSort, {read:false }) sort: MatSort;
   @ViewChild(MatExpansionPanel) expansionPanel: MatExpansionPanel
   constructor(private httpService:HttpService) { }
+
+  @Output() newResults = new EventEmitter<{ [key: string]: number }>();
 
   ngOnInit() {
   }
@@ -86,7 +88,7 @@ export class ImportCsvComponent implements OnInit {
       };  
   
     } else {  
-      alert("Please import a valid .csv file.");  
+      alert("Please import a valid .csv file.");
       this.fileReset();  
     }  
   }  
@@ -144,6 +146,8 @@ export class ImportCsvComponent implements OnInit {
       this.results = ans;
 
       console.log(this.results)
+
+      this.newResults.emit(ans)
 
 
     })

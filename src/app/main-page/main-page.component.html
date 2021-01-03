@@ -1,4 +1,9 @@
-<app-buttons></app-buttons>
+<!-- <app-buttons></app-buttons> -->
+<mat-accordion>
+<app-import-csv (newResults)="updateResults($event)"></app-import-csv>
 
+<app-indicator></app-indicator>
 
-<app-import-csv></app-import-csv>
+<app-report [result]="results"></app-report>
+
+</mat-accordion>

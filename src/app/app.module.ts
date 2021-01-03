@@ -24,7 +24,7 @@ import { ReportComponent } from './report/report.component';
 import { ImportCsvComponent } from './import-csv/import-csv.component';
 import { IndicatorComponent } from './indicator/indicator.component';
 import { MatExpansionModule } from '@angular/material';
-
+import {MatCheckboxModule} from '@angular/material/checkbox';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,8 +52,8 @@ import { MatExpansionModule } from '@angular/material';
     MatButtonModule,
     MatIconModule,
     MatGridListModule,
-    MatExpansionModule
-    
+    MatExpansionModule,
+    MatCheckboxModule,
     
     
 

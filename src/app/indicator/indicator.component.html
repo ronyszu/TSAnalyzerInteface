@@ -1,3 +1,23 @@
-<p>
-  indicator works!
-</p>
+
+  <mat-expansion-panel hideToggle>
+
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Indicator Configuration
+      </mat-panel-title>
+      <mat-panel-description>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+
+    <mat-checkbox [checked]="meanChecked"> Mean</mat-checkbox>
+    <mat-checkbox [checked]="medianChecked"> Median</mat-checkbox>
+    <mat-checkbox [checked]="modeChecked"> Mode</mat-checkbox>
+    <mat-checkbox [checked]="kurtosisChecked"> Kurtosis</mat-checkbox>
+    <mat-checkbox [checked]="skewnessChecked"> Skewness</mat-checkbox>
+    <mat-checkbox [checked]="lowerQuartileChecked"> Lower Quartile</mat-checkbox>
+    <mat-checkbox [checked]="upperQuartileChecked"> Upper Quartile</mat-checkbox>
+    
+
+
+  </mat-expansion-panel>
