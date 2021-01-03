@@ -1,0 +1,75 @@
+<mat-expansion-panel hideToggle>
+
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Add CSV File
+    </mat-panel-title>
+    <mat-panel-description>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+
+
+  <!-- <div [fileUploadInputFor]="fileUploadQueue" class="upload-drop-zone">
+  Drag and drop files here
+</div>
+
+
+<div style="width: 500px">
+  <mat-file-upload-queue #fileUploadQueue
+      [fileAlias]="'file'"
+      [httpUrl]="'https://localhost:44323/api/parameter/'" multiple>
+
+      <mat-file-upload [file]="file" [id]="i" *ngFor="let file of fileUploadQueue.files; let i = index"></mat-file-upload>
+  </mat-file-upload-queue>
+</div> -->
+
+  <button class="button" type="button" mat-raised-button color="warn" (click)="fileInput.click()">Choose File</button>
+  <input hidden (change)="csvImporter($event)" #fileInput type="file" id="file" accept=".csv">
+
+  <!-- <div> -->
+
+    <br>
+
+
+    <mat-form-field class="filter">
+      <mat-label>Filter</mat-label>
+      <input matInput (keyup)="applyFilter($event)">
+    </mat-form-field>
+
+    <div class="mat-elevation-z8 tables">
+      <table mat-table [dataSource]="dataSource" matSort>
+
+        <!-- ID Column -->
+        <!-- <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+      </ng-container> -->
+
+        <!-- Timestamp Column -->
+        <ng-container matColumnDef="timestamp">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Timestamp </th>
+          <td mat-cell *matCellDef="let row"> {{row.timestamp}} </td>
+        </ng-container>
+
+        <!-- Value Column -->
+        <ng-container matColumnDef="value">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Value </th>
+          <td mat-cell *matCellDef="let row"> {{row.value}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+        </tr>
+      </table>
+
+      <mat-paginator [pageSizeOptions]="[5, 10, 50, 100]"></mat-paginator>
+    <!-- </div> -->
+
+    <button style="float: right;" class="button" mat-raised-button color="primary" (click)="sendDataCSV()">Send Loaded
+      Data</button>
+    <button style="float: right;" class="button" mat-raised-button color="warn" (click)="unloadData()">Unload
+      Data</button>
+  </div>
+
+
+</mat-expansion-panel>
