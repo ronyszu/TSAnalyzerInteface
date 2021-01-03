@@ -1,9 +1,12 @@
 <!-- <app-buttons></app-buttons> -->
 <mat-accordion>
-<app-import-csv (newResults)="updateResults($event)"></app-import-csv>
 
-<app-indicator></app-indicator>
+<app-indicator (wantedDict)="updateDict($event)"></app-indicator>
 
-<app-report [result]="results"></app-report>
+<app-import-csv (newResults)="updateResults($event)" ></app-import-csv>
+
+
+
+<app-report [result]="results" [wanted]="booleanDict"></app-report>
 
 </mat-accordion>

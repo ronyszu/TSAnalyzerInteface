@@ -10,6 +10,7 @@ export class MainPageComponent implements OnInit {
 
 
 results: { [key: string]: number };
+booleanDict: { [key: string]: boolean }
 
   ngOnInit() {
   }
@@ -17,6 +18,12 @@ results: { [key: string]: number };
   updateResults(result: { [key: string]: number }){
 
     this.results = result;
+
+  }
+
+
+  updateDict(dict: { [key: string]: boolean }){
+    this.booleanDict  = dict;
 
   }
 

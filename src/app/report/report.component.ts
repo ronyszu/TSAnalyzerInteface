@@ -18,11 +18,11 @@ export class ReportComponent implements OnInit {
 
   @ViewChild(MatExpansionPanel) expansionPanel: MatExpansionPanel
   @Input() result: { [key: string]: number };
+  @Input() wanted: { [key: string]: boolean };
 
   displayedColumns: string[] = [ 'indicator', 'resultValue'];
   resultDataSource: any;
   dataframeData: result[]=[];
-
 
   constructor() { }
 
@@ -35,7 +35,7 @@ export class ReportComponent implements OnInit {
   ngOnChanges(changes: SimpleChanges){
     
 
-    if(!changes.firstChange){
+    //if(!changes.firstChange){
 
     for (let i = 0; i < Object.values(this.result).length; i++) {
       let result = <result><any>({
@@ -46,12 +46,19 @@ export class ReportComponent implements OnInit {
       })
       
 
-      this.dataframeData.push(result)  
+
+      if (this.wanted[result.indicator]){
+        this.dataframeData.push(result)
+      }
+      
+
+
+
     }
 
     this.resultDataSource = new MatTableDataSource(this.dataframeData);
 
-  }
+  //}
 }
 
 }

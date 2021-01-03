@@ -145,7 +145,6 @@ export class ImportCsvComponent implements OnInit {
 
       this.results = ans;
 
-      console.log(this.results)
 
       this.newResults.emit(ans)
 
