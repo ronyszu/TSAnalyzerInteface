@@ -18,25 +18,8 @@ export class HttpService {
 
   sendLoadedDataCSV(fileToSend: any) {
 
-    return this.http.post(this.baseUrl + '/getMeanSDandVarAccord', fileToSend)
+    return this.http.post(this.baseUrl + '/accordCalculation', fileToSend)
 
   }
 
-  calculateMean(dataToSend: CSVRecord[]) {
-
-    return this.http.post(this.baseUrl + '/calculateMean', dataToSend)
-
-  }
-
-  calculateSD(dataToSend: CSVRecord[]) {
-
-    return this.http.post(this.baseUrl + '/calculateSD', dataToSend)
-
-  }
-
-  calculateVar(dataToSend: CSVRecord[]) {
-
-    return this.http.post(this.baseUrl + '/calculateVar', dataToSend)
-
-  }
 }

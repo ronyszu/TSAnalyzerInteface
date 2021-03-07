@@ -47,6 +47,24 @@ export class ReportComponent implements OnInit {
       
 
 
+      if (this.wanted === undefined){
+
+        this.wanted = {};
+        
+        this.wanted["Mean"] = true;
+        this.wanted["Median"] = true;
+        this.wanted["Mode"] = true;
+        this.wanted["Skewness"] = true;
+        this.wanted["Kurtosis"] = true;
+        this.wanted["Lower Quartile"] = true;
+        this.wanted["Upper Quartile"] = true;
+        this.wanted["Standard Deviation"] = true;
+        this.wanted["Variance"] = true;
+
+
+      }
+
+
       if (this.wanted[result.indicator]){
         this.dataframeData.push(result)
       }
